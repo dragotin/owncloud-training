@@ -13,10 +13,10 @@ cp owncloud.tar.bz2 owncloud_centos6/
 cp owncloud.tar.bz2 owncloud_centos7/
 
 echo "Building Debian Image"
-docker build -t owncloud:debian ./owncloud_debian/
+docker build -t owncloud:debian ./owncloud_debian/ > /dev/null
 
 echo "Building Centos6 Image"
-docker build -t owncloud:centos6 ./owncloud_centos6/
+docker build -t owncloud:centos6 ./owncloud_centos6/ > /dev/null
 
 echo "Building Centos7 Image"
-docker build -t owncloud:centos7 ./owncloud_centos7/
+docker build -t owncloud:centos7 ./owncloud_centos7/ > /dev/null

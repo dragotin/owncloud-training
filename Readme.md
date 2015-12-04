@@ -13,7 +13,7 @@ Download owncloud and build ownCloud docker images
 ./oc_build <owncloud-download-url>
 ```
 
-Or build with existing ```owncloud.tar.bz2``` file
+Or build with existing ```owncloud.tar.bz2``` file in basefolder
 ```
 ./oc_build
 ```
