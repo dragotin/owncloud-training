@@ -1,6 +1,9 @@
 # Download
 
-https://owncloud.achernar.uberspace.de/oc82/index.php/s/xn87g5U1DT5WNHS
+```
+wget https://github.com/webhippie/owncloud-training/archive/master.zip
+unzip master.zip
+```
 
 # Usage
 
@@ -8,6 +11,11 @@ Download owncloud and build ownCloud docker images
 
 ```
 ./oc_build <owncloud-download-url>
+```
+
+Or build with existing ```owncloud.tar.bz2``` file
+```
+./oc_build
 ```
 
 Choose a OS version

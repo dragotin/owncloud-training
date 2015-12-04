@@ -36,8 +36,6 @@ RUN yum clean all && yum update
 
 # Install owncloud
 
-RUN wget https://download.owncloud.org/community/owncloud-8.2.1.tar.bz2
-RUN tar -xvf owncloud*
-RUN mv owncloud /var/www/html/owncloud/
-RUN chown -R apache.apache /var/www/html/owncloud/
+ADD owncloud.tar.bz2 /var/www/
+RUN chown -R apache.apache /var/www/owncloud
 

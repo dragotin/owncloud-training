@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build -t owncloud ./owncloud_debian
+docker build -t owncloud:debian .
 
 docker rm -f oc
 docker rm -f mariadb
@@ -8,11 +8,9 @@ docker rm -f redis
 
 docker run -d --name redis webhippie/redis:latest
 docker run -d --name mariadb -e MARIADB_ROOT_PASSWORD=secret  webhippie/mariadb:latest
-docker run -d -e VIRTUAL_HOST=oc.docker -h oc.docker --name oc -p 443:443 --link mariadb --link redis owncloud
+docker run -d -e VIRTUAL_HOST=oc.docker -h oc.docker --name oc -p 443:443 --link mariadb --link redis owncloud:debian
 
 echo "Please add a hosts entry for owncloud in /etc/hosts"
 IP=
 echo "$IP oc.docker"
 
-# Wait a bit for MariaDB to get started
-sleep 5
