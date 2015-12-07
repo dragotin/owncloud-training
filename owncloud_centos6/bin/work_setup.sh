@@ -1,7 +1,6 @@
 #!/bin/bash
 
 yum -y update && yum install -y \
-    mysql \
     unzip \
     vim \
     tar \

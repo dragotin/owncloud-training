@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -q -y \
         wget \
         curl \
         bzip2 \
+        cron \
         apache2 \
         libapache2-mod-php5 \
         php5-gd \

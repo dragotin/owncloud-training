@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Setup SSL Self Signed Certificates for https"
-yum install -y mod_ssl openssl
 
 [[ $1 == "strict" ]] && echo "Remove Port 80" && sed -i 's|Listen 80| |' /etc/httpd/conf/httpd.conf
 

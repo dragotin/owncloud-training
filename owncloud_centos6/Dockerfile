@@ -4,6 +4,10 @@ RUN yum -y update && yum install -y --nogpgcheck \
         wget \
         curl \
         httpd \
+        crontabs.noarch \
+        mysql \
+        mod_ssl \
+        openssl \
         && yum clean all
 
 ENV TERM ansi 
@@ -26,6 +30,7 @@ RUN yum -y update && yum install -y --nogpgcheck \
  	php56u-mcrypt.x86_64 \
 	php56u-gd.x86_64 \
         php56u-pecl-redis.x86_64 \
+        php56u-ldap.x86_64 \
         && yum clean all
 
 # Install ownCloud
