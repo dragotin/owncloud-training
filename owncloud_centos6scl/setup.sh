@@ -19,8 +19,6 @@ echo "Setup LDAP"
 docker exec -ti oc ldap_setup.sh
 docker exec -ti oc killall -s HUP apache2
 
-exit
-
 echo "Install Shibboleth"
 docker exec -ti oc shib_install.sh
 

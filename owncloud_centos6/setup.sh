@@ -3,21 +3,17 @@
 echo "Install ownCloud"
 docker exec -ti oc oc_install.sh
 
-# docker exec -ti oc phpinfo.sh
-# docker exec -ti oc loglevel.sh 0
+docker exec -ti oc phpinfo_setup.sh
+docker exec -ti oc loglevel.sh 0
 
-echo "Setup SSL Self Signed Certificates for https"
 docker exec -ti oc ssl_setup.sh strict
-
-echo "Setup Redis for Transactional File Locking and Caching"
 docker exec -ti oc redis_setup.sh
-
-echo "Setup SMB / CIFS and External Storages"
 docker exec -ti oc smb_setup.sh
 
 echo "Setup LDAP"
 docker exec -ti oc ldap_setup.sh
-docker exec -ti oc killall -s HUP apache2
+
+exit
 
 echo "Install Shibboleth"
 docker exec -ti oc shib_install.sh

@@ -4,4 +4,4 @@
 # 0 = Debug, 1 = Info, 2 = Warning, 3 = Error, and 4 = Fatal
 
 su apache -s /bin/bash -c 'php /var/www/owncloud/occ config:system:get loglevel'
-[[ $# == 1 ]] && echo "Setting Loglevel to $1" && su apache -s /bin/bash -c "php /var/www/owncloud/occ config:system:set loglevel --value $1"
+[[ $# == 1 ]] && su apache -s /bin/bash -c "php /var/www/owncloud/occ config:system:set loglevel --value $1"

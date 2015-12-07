@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Setup SMB / CIFS and External Storages"
 # https://software.opensuse.org/download.html?project=isv%3AownCloud%3Acommunity%3A8.1&package=php5-libsmbclient
 
-yum install -y samba-client unzip php56u-devel libsmbclient-devel libsmbclient gcc
+yum install -y samba-client unzip php56u-devel libsmbclient-devel libsmbclient
+yum groupinstall "Development tools"
 
 # php5-libsmbclient from source
 cd root
@@ -16,11 +16,13 @@ phpize
 make
 make install
 
+yum groupremove "Development tools"
+yum install -y php56u-devel libsmbclient-devel
+
 echo "extension=libsmbclient.so" > /etc/php.d/20-libsmbclient.ini
+
 echo "export HOME=/usr/share/httpd" >> /etc/sysconfig/httpd
 echo "HOME=/usr/share/httpd" >> /etc/sysconfig/httpd
 
-yum remove -y php56u-devel libsmbclient-devel gcc
-service httpd restart
 
 su apache -s /bin/bash -c 'php /var/www/owncloud/occ app:enable files_external'

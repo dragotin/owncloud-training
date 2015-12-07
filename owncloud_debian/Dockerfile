@@ -16,8 +16,7 @@ RUN apt-get update && apt-get install -q -y \
         php5-intl \
         php5-mcrypt \
         php5-imagick \
-        php5-redis \
-        mysql-client
+        php5-redis
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
@@ -55,7 +54,7 @@ RUN sed -i 's_DocumentRoot /var/www/html_DocumentRoot /var/www/owncloud_' /etc/a
 
 ADD bin src/bin
 RUN chmod 0755 src/bin/*
-RUN cp src/bin/* /usr/bin
+RUN cp src/bin/* /usr/local/bin
 
 CMD ["bash", "/src/start.sh"]
 
