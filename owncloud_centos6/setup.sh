@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Curl issue
+# https://bugzilla.redhat.com/show_bug.cgi?id=1241172
+# https://doc.owncloud.org/server/8.1/admin_manual/configuration_server/security_setup_warnings.html#outdated-nss-openssl-version
+
 echo "Install ownCloud"
 docker exec -ti oc oc_install.sh
 

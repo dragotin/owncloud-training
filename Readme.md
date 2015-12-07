@@ -35,4 +35,3 @@ Install and setup a list of functions for ownCloud
 ```
 ./setup.sh
 ```
-

@@ -13,6 +13,3 @@ docker run -d -e VIRTUAL_HOST=oc.docker -h oc.docker --name oc -p 443:443 --link
 echo "Please add a hosts entry for owncloud in /etc/hosts"
 # IP= 
 echo "$IP oc.docker"
-
-# Wait a bit for MariaDB to get started
-# sleep 5
